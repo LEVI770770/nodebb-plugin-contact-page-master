@@ -1,0 +1,24 @@
+{
+    "id": "nodebb-plugin-contact-page-master",
+    "name": "nodebb-plugin-contact-page-master",
+    "url": "https://github.com/MinecraftForgeFrance/nodebb-plugin-contact-page",
+    "library": "./library.js",
+    "templates": "./static/templates",
+    "scripts": [
+		"static/js/contact.js"
+	],
+    "acpScripts": [
+        "static/js/admin.js"
+    ],
+    "less": [
+		"static/style.less"
+	],
+    "hooks": [
+        { "hook": "static:app.load", "method": "init" },
+        { "hook": "filter:admin.header.build", "method": "addToAdminNav" },
+        { "hook": "filter:config.get", "method": "getConfig" },
+        { "hook": "filter:email.modify", "method": "modifyEmail"}
+    ],
+    "languages": "languages",
+    "defaultLang": "en_GB"
+}
